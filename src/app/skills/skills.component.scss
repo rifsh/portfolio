@@ -1,0 +1,8 @@
+.container {
+    display: grid;
+    /* Grid template columns and rows */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 150px;
+    /* Gap between grid items */
+    gap: 10px;
+}

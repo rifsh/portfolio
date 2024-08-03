@@ -1,0 +1,19 @@
+.active {
+    color: #00ff99;
+}
+
+.navigation-link {
+    .active {
+        text-decoration: underline;
+        transition: all 20s;
+    }
+}
+
+.navigation-link a {
+    font-family: monospace !important;
+    font-size: large;
+}
+
+.nav-link {
+    @apply relative font-semibold text-white cursor-pointer text-[17px] w-fit md:block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#00ff99] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center hidden
+}
