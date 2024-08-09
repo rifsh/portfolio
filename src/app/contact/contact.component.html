@@ -6,20 +6,20 @@
                 adipisicing elit. Atque aliquid assumenda qui saepe!</p>
         </div>
         <div class="mt-10">
-            <form action="" class="flex flex-col h-full">
+            <form action="" (ngSubmit)="onSubmit()" [formGroup]="contactForm" class="flex flex-col h-full">
                 <div class="flex items-center justify-between">
-                    <input
+                    <input formControlName="fName"
                         class="bg-[#1c1c22] flex-1 py-3 rounded-md px-4 me-4 focus:outline-none focus:outline-[#00ff99] transition-all"
                         type="text" placeholder="Firstname">
-                    <input
+                    <input formControlName="lName"
                         class="bg-[#1c1c22] flex-1 py-3 rounded-md px-4 focus:outline-none focus:outline-[#00ff99] transition-all"
                         type="text" placeholder="Lastname">
                 </div>
                 <div class="flex items-center justify-between mt-5">
-                    <input
+                    <input formControlName="eMail"
                         class="bg-[#1c1c22] flex-1 py-3 rounded-md px-4 me-4 focus:outline-none focus:outline-[#00ff99] transition-all"
                         type="email" placeholder="Email address">
-                    <input
+                    <input formControlName="phone"
                         class="bg-[#1c1c22] flex-1 py-3 rounded-md px-4 focus:outline-none focus:outline-[#00ff99] transition-all"
                         type="text" placeholder="Phone number">
                 </div>
@@ -55,13 +55,13 @@
                     </div>
                 </div>
                 <div class="w-full mt-5">
-                    <textarea id="message" name="message" rows="7"
+                    <textarea id="message" name="message" rows="7" formControlName="message"
                         class="bg-[#1c1c22] shadow-sm focus:outline-none focus:ring-[#00ff99] block w-full sm:text-sm border border-none rounded-md p-3 resize-none transition-all"
                         placeholder="Enter your message here..."></textarea>
                 </div>
 
                 <div class="w-full mt-5">
-                    <button
+                    <button type="submit"
                         class="transition-all font-mono text-black bg-[#00ff99] py-[11px] px-4 rounded-full hover:bg-[#25ea9b] font-bold">Send
                         Message</button>
                 </div>
