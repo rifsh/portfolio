@@ -1,1 +1,107 @@
-<p>contact works!</p>
+<div class="flex flex-wrap flex-row items-center">
+    <div class="flex-1 h-[640px] bg-[#27272c] px-8 py-7 flex flex-col rounded-xl">
+        <div>
+            <h1 class="text-4xl text-start font-mono text-[#00ff99] font-thin">Let's work together</h1>
+            <p class="text-start font-mono text-sm mt-5 text-gray-300">Lorem ipsum dolor sit amet consectetur,
+                adipisicing elit. Atque aliquid assumenda qui saepe!</p>
+        </div>
+        <div class="mt-10">
+            <form action="" class="flex flex-col h-full">
+                <div class="flex items-center justify-between">
+                    <input
+                        class="bg-[#1c1c22] flex-1 py-3 rounded-md px-4 me-4 focus:outline-none focus:outline-[#00ff99] transition-all"
+                        type="text" placeholder="Firstname">
+                    <input
+                        class="bg-[#1c1c22] flex-1 py-3 rounded-md px-4 focus:outline-none focus:outline-[#00ff99] transition-all"
+                        type="text" placeholder="Lastname">
+                </div>
+                <div class="flex items-center justify-between mt-5">
+                    <input
+                        class="bg-[#1c1c22] flex-1 py-3 rounded-md px-4 me-4 focus:outline-none focus:outline-[#00ff99] transition-all"
+                        type="email" placeholder="Email address">
+                    <input
+                        class="bg-[#1c1c22] flex-1 py-3 rounded-md px-4 focus:outline-none focus:outline-[#00ff99] transition-all"
+                        type="text" placeholder="Phone number">
+                </div>
+                <div class="w-full mt-5">
+                    <div class="w-full relative inline-block text-start">
+                        <div>
+                            <button (click)="toggleDropdown()" type="button"
+                                class="font-mono inline-flex justify-center w-full rounded-md shadow-sm px-4 py-2 bg-[#1c1c22] text-sm font-medium text-gray-200 focus:ring-2 transition-all focus:ring-[#00ff99]">
+                                {{ selectedOption || 'Select a service' }}
+                                <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                    fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.707a1 1 0 011.414 0L10 11.414l3.293-3.707a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Dropdown Menu -->
+                        <ul *ngIf="isDropdownOpen"
+                            class="absolute z-10 mt-1 w-full bg-[#1c1c22] shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
+                            tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                            aria-activedescendant="listbox-option-3">
+                            <li *ngFor="let option of options" (click)="selectOption(option)"
+                                class="text-black font-mono hover:text-black transition-all cursor-pointer select-none relative py-2 pl-10 pr-4 hover:bg-[#00ff99]"
+                                [class.bg-white]="option === selectedOption"
+                                [class.text-black]="option === selectedOption"
+                                [class.bg-[#1c1c22]]="option !== selectedOption">
+                                <span class="block truncate" [class.font-semibold]="option === selectedOption">{{ option
+                                    }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w-full mt-5">
+                    <textarea id="message" name="message" rows="7"
+                        class="bg-[#1c1c22] shadow-sm focus:outline-none focus:ring-[#00ff99] block w-full sm:text-sm border border-none rounded-md p-3 resize-none transition-all"
+                        placeholder="Enter your message here..."></textarea>
+                </div>
+
+                <div class="w-full mt-5">
+                    <button
+                        class="transition-all font-mono text-black bg-[#00ff99] py-[11px] px-4 rounded-full hover:bg-[#25ea9b] font-bold">Send
+                        Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="flex-1 ms-[70px] h-[640px] flex items-center">
+        <div class="h-[300px] w-full mt-11 flex flex-col justify-between ">
+            <!-- Phone -->
+            <div class="flex items-center">
+                <div class="me-8 w-16 h-16 bg-[#27272c] rounded-md flex items-center justify-center">
+                    <i class='text-[#00ff99] text-4xl bx bxs-phone'></i>
+                </div>
+                <div class="font-mono">
+                    <p class="text-gray-400">Phone</p>
+                    <p class="text-lg">+91 907 41 444 85</p>
+                </div>
+            </div>
+
+            <!-- Mail -->
+            <div class="flex items-center">
+                <div class="me-8 w-16 h-16 bg-[#27272c] rounded-md flex items-center justify-center">
+                    <i class='text-[#00ff99] text-4xl bx bxs-envelope' ></i>
+                </div>
+                <div class="font-mono">
+                    <p class="text-gray-400">Email</p>
+                    <p class="text-lg">{{mail}}</p>
+                </div>
+            </div>
+
+            <!-- Location -->
+            <div class="flex items-center">
+                <div class="me-8 w-16 h-16 bg-[#27272c] rounded-md flex items-center justify-center">
+                    <i class='text-[#00ff99] text-4xl bx bx-current-location' ></i>
+                </div>
+                <div class="font-mono">
+                    <p class="text-gray-400">Address</p>
+                    <p class="text-lg">Kerala, Malappuram, Kotakkal, 676508</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

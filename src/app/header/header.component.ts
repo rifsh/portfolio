@@ -8,6 +8,7 @@ import { AboutComponent } from '../about/about.component';
 import { SkillsComponent } from '../skills/skills.component';
 import { ProjectsComponent } from '../projects/projects.component';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { ContactComponent } from '../contact/contact.component';
 interface NavData {
   label: string,
   path: string
@@ -15,7 +16,7 @@ interface NavData {
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterLink, ProjectsComponent, RouterLinkActive, HomeComponent, ServicesComponent, AboutComponent, RouterOutlet, SkillsComponent],
+  imports: [CommonModule, RouterLink, ProjectsComponent, RouterLinkActive, HomeComponent, ServicesComponent, AboutComponent, RouterOutlet, SkillsComponent, ContactComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   animations: [
