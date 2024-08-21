@@ -33,5 +33,7 @@ export class SkillsComponent {
     { skill: "MonogDB", image: "../../assets/Skills/mongodb-icon.webp" },
     { skill: "MySQL", image: "../../assets/Skills/mysql-icon.webp" },
     { skill: "Docker", image: "../../assets/Skills/docker-icon.webp" },
+    { skill: "AWS", image: "../../assets/Skills/aws-icon.webp" },
+    { skill: "Microservice", image: "../../assets/Skills/microservice-icon.webp" },
   ]
 }
