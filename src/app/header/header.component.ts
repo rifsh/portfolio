@@ -30,7 +30,7 @@ interface NavData {
         transform: 'translateY(0)'
       })),
       transition('void <=> *', [
-        animate('0.3s ease-in-out')
+        animate('0.3s ease-in-out'),
       ])
     ]),
     [
