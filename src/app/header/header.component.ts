@@ -85,14 +85,32 @@ export class HeaderComponent implements OnInit {
   scrollTo(section: string) {
     this.route.navigate([section]).then(() => {
       const element = document.querySelector(`#${section.slice(1, section.length)}`);
-      console.log(element);
-      
+
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     })
   }
 
+  @HostListener('window:scroll', [])
+  onWindowScroll() {  
+    const sections = document.querySelectorAll('section');
+    
+    let currentSection = '';
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (window.scrollY >= sectionTop - sectionHeight / 3) {
+        currentSection = section.getAttribute('id');
+      }
+    });
+
+    if (currentSection) {
+      this.route.navigate([currentSection]);
+    }
+  }
+  
   openPhoneMenu() {
     this.phoneMenu = !this.phoneMenu;
   }

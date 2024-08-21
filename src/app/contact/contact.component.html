@@ -6,7 +6,7 @@
                 adipisicing elit. Atque aliquid assumenda qui saepe!</p>
         </div>
         <div class="mt-5">
-            <form action="" (ngSubmit)="onSubmit()" [formGroup]="contactForm" class="flex flex-col h-full">
+            <form action="" (ngSubmit)="onSubmit($event)" [formGroup]="contactForm" class="flex flex-col h-full">
                 <div class="flex flex-col md:flex-row items-center justify-between">
                     <input formControlName="fName"
                         class="bg-[#1c1c22] w-full flex-1 py-3 rounded-md md:mb-0 mb-5 px-4 md:me-4 focus:outline-none focus:outline-[#00ff99] transition-all"
@@ -79,7 +79,7 @@
                 </div>
                 <div class="font-mono">
                     <p class="text-gray-400">Phone</p>
-                    <p class="text-lg">+91 907 41 444 85</p>
+                    <a href="tel:907 41 444 85" class="text-lg">+91 907 41 444 85</a>
                 </div>
             </div>
 
@@ -90,7 +90,7 @@
                 </div>
                 <div class="font-mono">
                     <p class="text-gray-400">Email</p>
-                    <p class="text-lg">{{mail}}</p>
+                    <a href="mailto:rifshmuhammed@gmail.com" class="text-lg">{{mail}}</a>
                 </div>
             </div>
 

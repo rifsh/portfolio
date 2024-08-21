@@ -4,6 +4,7 @@ import { Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
+import emailJs, { EmailJSResponseStatus } from '@emailjs/browser'
 
 @Component({
   selector: 'app-contact',
@@ -24,7 +25,7 @@ export class ContactComponent {
       fName: ['', Validators.required],
       lName: ['', Validators.required],
       eMail: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required, Validators.email]],
+      phone: ['', [Validators.required]],
       message: ['', Validators.required]
     });
   }
@@ -38,7 +39,14 @@ export class ContactComponent {
     this.isDropdownOpen = false;
   }
 
-  onSubmit() {
-    console.log(this.contactForm.value);
-    }
+  onSubmit(event: Event) {
+    event.preventDefault();
+    emailJs.sendForm('service_6l6ktkj', 'template_czg0f4b', event.target as HTMLFormElement, '7vBCRH8jMwYsw4iA6')
+      .then((res: EmailJSResponseStatus) => {
+        console.log("Email Sent", res.text);
+      }, (err) => {
+        console.log("An error occured", err.text);
+
+      })
+  }
 }
