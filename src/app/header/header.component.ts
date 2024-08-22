@@ -88,16 +88,17 @@ export class HeaderComponent implements OnInit {
 
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
+        this.phoneMenu = false;
       }
     })
   }
 
   @HostListener('window:scroll', [])
-  onWindowScroll() {  
+  onWindowScroll() {
     const sections = document.querySelectorAll('section');
-    
+
     let currentSection = '';
-    
+
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.clientHeight;
@@ -110,7 +111,7 @@ export class HeaderComponent implements OnInit {
       this.route.navigate([currentSection]);
     }
   }
-  
+
   openPhoneMenu() {
     this.phoneMenu = !this.phoneMenu;
   }

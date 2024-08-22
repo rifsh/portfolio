@@ -40,8 +40,9 @@ export class ContactComponent {
   }
 
   onSubmit(event: Event) {
+    
     event.preventDefault();
-    emailJs.sendForm('service_6l6ktkj', 'template_czg0f4b', event.target as HTMLFormElement, '7vBCRH8jMwYsw4iA6')
+    emailJs.sendForm('service_m4av811', 'template_czg0f4b', event.target as HTMLFormElement, '7vBCRH8jMwYsw4iA6')
       .then((res: EmailJSResponseStatus) => {
         console.log("Email Sent", res.text);
       }, (err) => {
